@@ -8,7 +8,8 @@
 import UIKit
 
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController
+{
 
     //Textfields pre-linked with IBOutlets
     @IBOutlet var emailTextfield: UITextField!

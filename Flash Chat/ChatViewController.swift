@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 class ChatViewController: UIViewController {
     
@@ -100,17 +100,19 @@ class ChatViewController: UIViewController {
     //TODO: Create the retrieveMessages method here:
     
     
-
-    
-    
-    
-    @IBAction func logOutPressed(_ sender: AnyObject) {
-        
+    @IBAction func logOutPressed(_ sender: AnyObject)
+    {
         //TODO: Log out the user and send them back to WelcomeViewController
-        
-        
+        do
+        {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+        }
+        catch
+        {
+            print("Cannot sign out: ")
+            print(error)
+        }
     }
-    
-
 
 }
